@@ -7,6 +7,11 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+/*********************************************************
+**可以采用二叉树的迭代遍历，如果节点的值在(L,R)范围内，则加入
+**sum中。
+*********************************************************/
 class Solution {
 public:
     int rangeSumBST(TreeNode* root, int L, int R) {
