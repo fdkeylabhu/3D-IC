@@ -1,13 +1,28 @@
+/*************************************
+采用二分查找法
+*************************************/
+
 class Solution {
 public:
-    int searchInsert(vector<int>& nums, int target) {
+    int searchInsert(vector<int>& nums, int target) {     
         int len = nums.size();
-        for (int i = 0; i < len; ++i) {
-            if (nums[i] >= target) {
-                return i;
-            }
+        
+        int left = 0;               
+        int right = len;            //初始边界
+        int mid = 0;
+        
+        while (left < right) {
+            mid = left + (right - left)/2;            
+            if (nums[mid] == target) {                
+                return mid;                         
+            } else if (nums[mid] < target) {
+                left = mid + 1;                
+            } else {
+                right = mid;
+            }            
         }
         
-        return len;
+        return left;
     }
+};
 };
